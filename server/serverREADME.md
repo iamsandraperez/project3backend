@@ -17,6 +17,10 @@
 | DELETE          | `/api/users/:_id/delete`  | Delete a specific user             |
 
 
+
+//////////añadir endpoints de colaboradores dentro de users
+
+
 **Posts routes**
 
 | HTTP Method | URI path                | Description                        |

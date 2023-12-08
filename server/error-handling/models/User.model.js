@@ -36,15 +36,15 @@ const userSchema = new Schema(
     description: {
       type: String,
     },
-    avatar: {
-      type: String,
-    },
+    // imageUrl: {
+    //   type: String,
+    // },
     role: {
       type: String,
       enum: ['visitor', 'member', 'admin'],
       default: 'visitor'
     },
-    collaborators: [
+    colaborators: [
       {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'

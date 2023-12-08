@@ -1,29 +1,22 @@
 const router = require('express').Router()
-const User = require('../models/User.model')
+const { verifyToken } = require('../middlewares/verifyToken')
 
-router.get('/list', (req, res, next) => {
+const {
+    getAllUsers,
+    getOneUser,
+    deleteUser,
+    getAllColaborators,
+    addColaborators,
+    removeColaborators,
 
-    User
-        .find({})
-        .then(users => {
-            res.json(users)
-        })
-        .catch(err => next(err))
-})
+} = require('./../controllers/users.controllers')
 
-router.get("/:_id", (req, res, next) => {
-
-    const { _id } = req.params
-
-    User
-        .findById(_id)
-        .then(response => res.json(response))
-        .catch(err => next(err))
-})
-
-
-
-
+router.get('/getAllUsers', getAllUsers)
+router.get('/getOneUser/:_id', getOneUser)
+router.delete('/deleteUser/:_id', deleteUser)
+router.get('/getAllColaborators/:userId', getAllColaborators)
+router.post('/addColaborators/:userId', addColaborators)
+router.delete('/removeColaborators/:userId', removeColaborators)
 
 
 module.exports = router

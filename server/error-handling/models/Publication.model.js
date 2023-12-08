@@ -1,6 +1,6 @@
 const { Schema, model } = require('mongoose')
 
-const postSchema = new Schema(
+const publicationSchema = new Schema(
     {
         title: {
             type: String,
@@ -22,7 +22,7 @@ const postSchema = new Schema(
     }
 )
 
-const Post = model("Post", postSchema)
+const Publication = model("Publication", publicationSchema)
 
-module.exports = Post
+module.exports = Publication
 

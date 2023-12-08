@@ -36,7 +36,7 @@ const userSchema = new Schema(
     description: {
       type: String,
     },
-    avatar: {
+    imageUrl: {
       type: String,
     },
     role: {
@@ -44,7 +44,7 @@ const userSchema = new Schema(
       enum: ['visitor', 'member', 'admin'],
       default: 'visitor'
     },
-    collaborators: [
+    colaborators: [
       {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'

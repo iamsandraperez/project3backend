@@ -1,4 +1,4 @@
 const router = require('express').Router()
-const Post = require('../models/Post.model')
+const Publication = require('../models/Publication.model')
 
 router.post('/')
